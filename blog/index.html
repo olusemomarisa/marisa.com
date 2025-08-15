@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Looking Within — BA Project | Marisa Olusemo</title>
+  <title>Blog | Marisa Olusemo</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <header>
     <div id="logo">
-  <h1><a href="../index.html#blog">Marisa Olusemo</a></h1>
-  <h2><a href="../index.html#blog">Looking Within — BA Project</a></h2>
+      <h1><a href="../index.html">Marisa Olusemo</a></h1>
+      <h2><a href="../index.html#blog">Blog</a></h2>
     </div>
   </header>
   <nav class="container" role="navigation" aria-label="Primary">
@@ -22,7 +22,7 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="../work.html">Work</a></li>
           <li><a href="../advocacy.html">Advocacy</a></li>
-          <li><a href="../blog/index.html">Blog</a></li>
+          <li class="selected"><a href="index.html">Blog</a></li>
           <li><a href="../contact.html">Contact</a></li>
           <li><button class="theme-toggle" id="theme-toggle" type="button">Theme</button></li>
         </ul>
@@ -31,19 +31,17 @@
   </nav>
 
   <main class="site_content_index">
-    <article class="card">
-      <h3>Looking Within — BA (Honours) Final Year Project</h3>
-      <p>Music Video / Documentary style project — a collection of songs written, produced and performed by Marisa (co‑lyricist Nathan Brown‑Bennett). Marisa handled lighting, filming, directing, planning, set design, video editing, recording and producing in 5 days.</p>
-      <div class="video"><div class="youtube-player" data-id="k7Oax-m1lbY"></div></div>
-      <p><a class="btn" href="https://youtu.be/k7Oax-m1lbY" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </article>
+    <ul class="grid">
+      <li class="grid_item span g"><a href="relevance.html" class="grid_link"><div class="tile">Relevance: D–1 x DeeDigital</div></a></li>
+      <li class="grid_item span h"><a href="looking-within.html" class="grid_link"><div class="tile">Looking Within (BA Project)</div></a></li>
+      <li class="grid_item span i"><a href="deedigital.html" class="grid_link"><div class="tile">DeeDigital Interviews</div></a></li>
+    </ul>
   </main>
 
   <footer>
     <ul id="btmtext"><li><h6>&copy; <span id="year"></span> Marisa Olusemo</h6></li></ul>
   </footer>
   <script src="../js/fixedNavMenu.js"></script>
-  <script src="../js/vid.js"></script>
   <script src="../js/theme.js"></script>
   <script src="../js/activeNav.js"></script>
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>

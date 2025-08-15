@@ -1,30 +1,36 @@
-# Marisa Olusemo — Official Site
+# Marisa Olusemo — Portfolio Site
 
-This is the official website for Marisa Olusemo — musician, producer, audio engineer, singer, songwriter, and advocate. The site highlights Marisa’s music and arts work, advocacy and press, and provides easy ways to follow and contact her.
+This is the portfolio website for Marisa Olusemo — musician, producer, audio engineer, singer, songwriter, and advocate.
 
-## What’s here
-- Music & Arts: Featured projects including the DeeDigital collaboration “Relevance (D‑1)” and the “Looking Within” project, with lightweight YouTube embeds.
-- Podcasts & Broadcasting: Interviews and discussions like “Powerful Words,” embedded via SoundCloud and YouTube.
-- Gallery: A scrolling carousel of portraits and behind‑the‑scenes photos (see `Edited/`).
-- Advocacy & Press: Highlights from Barnardo’s, Capital FM, royal engagements, and media mentions.
-- Blog: Short write‑ups with links back to projects.
-- Contact: A simple form (powered by FormSubmit) and social links (Instagram, X, SoundCloud).
+## Structure
 
-## Design and accessibility
-- Palette: Veronica (#A736EC), Amethyst (#9153D4), Tropical indigo (#7A7AD1), Orchid pink (#D5A9B2), Beige (#E4E4CB).
-- Accessibility: Semantic landmarks, labels for form inputs, keyboard‑friendly carousel, and visible focus styles for links and buttons.
-- Performance: Lightweight static site with deferred embeds and minimal JS.
+- `index.html`: Compact landing (hero-only). Nav links route to pages.
+- `work.html`: Featured work, podcasts/broadcasting, gallery.
+- `work/*`: Case studies (hero image, role, timeline, tools, credits).
+- `advocacy.html`: Advocacy highlights and platforms.
+- `blog/`: Blog index and posts.
+- `contact.html`: Contact form (FormSubmit) and tips.
 
-## Local development
-Open `index.html` in a browser or serve the folder with any static server.
+## Design & UX
+
+- Modern Inter typography, subtle shadows, rounded cards.
+- Sticky nav, active-link highlighting (location + IntersectionObserver).
+- Dark mode toggle (persists in localStorage).
+- Accessible focus-visible styles, labeled inputs, keyboardable carousel.
+
+## Performance
+
+- Lightweight YouTube embeds, minimal JS, sticky nav via CSS.
+- Image optimization recommended: compress files in `Edited/` to 2000px max width and ~75% quality (AVIF or WebP preferred). Filenames unchanged to avoid broken links.
 
 ## Deployment
-This repo is configured for GitHub Pages. It’s a static site (no build). A `.nojekyll` file disables Jekyll processing. Push to `main` to deploy.
 
-## Contributing / content updates
-- Edit content in `index.html` and blog posts under `blog/`.
-- Images live in `Edited/` (large PSDs are ignored via `.gitignore`).
-- Contact email and socials can be updated in the Contact section and footer of `index.html`.
+Static site; serve locally or host on GitHub Pages/Netlify. No build step required.
+
+## Content updates
+
+- Edit HTML files directly. Add new case studies under `work/` and link them from `work.html`.
 
 ## License
-See `LICENSE` for details.
+
+See `LICENSE`.

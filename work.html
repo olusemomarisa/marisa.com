@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work | Marisa Olusemo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <h1><a href="index.html">Marisa Olusemo</a></h1>
+      <h2><a href="index.html">Musician • Producer • Audio Engineer • Singer • Songwriter • Advocate</a></h2>
+    </div>
+  </header>
+  <nav class="container" role="navigation" aria-label="Primary">
+    <ul class="clearfix" id="cfix">
+      <li class="icon" id="icon"><a href="javascript:void(0);" onclick="myMenu()" aria-label="Toggle menu">&#9776; Menu</a></li>
+      <li>
+        <ul class="scroll" id="scroll">
+          <li><a href="index.html">Home</a></li>
+          <li class="selected"><a href="work.html">Work</a></li>
+          <li><a href="advocacy.html">Advocacy</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><button class="theme-toggle" id="theme-toggle" type="button">Theme</button></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="site_content_index">
+    <section class="section-intro">
+      <h3 class="anchor">Selected Work</h3>
+      <p class="muted">A few projects across music, video and broadcasting. See individual case studies for full credits and process.</p>
+    </section>
+
+    <div class="cards">
+      <article class="card">
+        <header><h4>Relevance — D–1 (Lead Vocal)</h4></header>
+        <p>Original music video created under tight time constraints in a Sony Music Project with Dee Digital.</p>
+        <div class="video"><div class="youtube-player" data-id="2_rwCbVFsDY"></div></div>
+        <p><a class="btn" href="work/relevance.html">Case study</a> <a class="btn alt" href="https://youtu.be/2_rwCbVFsDY" target="_blank" rel="noopener">Watch</a></p>
+      </article>
+
+      <article class="card">
+        <header><h4>Looking Within — Final Year Project</h4></header>
+        <p>Collection of songs written, produced and performed by Marisa. Lighting, filming, directing, set design and editing in 5 days.</p>
+        <div class="video"><div class="youtube-player" data-id="k7Oax-m1lbY"></div></div>
+        <p><a class="btn" href="work/looking-within.html">Case study</a> <a class="btn alt" href="https://youtu.be/k7Oax-m1lbY" target="_blank" rel="noopener">Watch</a></p>
+      </article>
+
+      <article class="card">
+        <header><h4>DeeDigital Channel</h4></header>
+        <p>Interviews hosted and directed by Marisa and the music video ‘Relevance’ are featured on the DeeDigital Music channel.</p>
+        <p><a class="btn alt" href="https://www.youtube.com/@DeeDigitalMusiccm" target="_blank" rel="noopener">Visit Channel</a></p>
+      </article>
+    </div>
+
+    <div class="anchor-box"><h4 class="center">Podcasts & Broadcasting</h4></div>
+    <div class="cards">
+      <article class="card">
+        <header><h4>Powerful Words — Radio Show Interview</h4></header>
+        <div class="soundcloud-embed">
+          <iframe allow="autoplay" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-409936462/powerful-words-radio-show-interview&color=%237A5CFA&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        </div>
+        <p><a class="btn" href="https://soundcloud.com/user-409936462/powerful-words-radio-show-interview" target="_blank" rel="noopener">Open on SoundCloud</a></p>
+      </article>
+      <article class="card">
+        <header><h4>DeeDigital Podcast — Violence in Drill</h4></header>
+        <p>Discussion on violence in drill and its influence on youth; featuring artists from D–1 on how ‘Relevance’ spreads a positive message.</p>
+        <p><a class="btn alt" href="https://www.youtube.com/watch?v=bZjqDbGldHQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
+      </article>
+    </div>
+
+    <div class="anchor-box"><h4 class="center">Gallery</h4></div>
+    <div class="carousel" role="region" aria-label="Marisa photo carousel">
+      <button class="carousel-btn prev" aria-label="Previous slide" data-dir="-1">‹</button>
+      <div class="carousel-track" tabindex="0">
+        <img src="Edited/Portrait.jpg" alt="Marisa portrait" />
+        <img src="Edited/Side-eye%20Mawisa.jpg" alt="Marisa side-eye pose" />
+        <img src="Edited/Top-Down-BW.jpg" alt="Top down black and white portrait" />
+        <img src="Edited/BW%20Badass.jpg" alt="Black and white studio shot" />
+        <img src="Edited/upright-smile.jpg" alt="Marisa upright smiling" />
+        <img src="Edited/Blueface.jpg" alt="Blue toned portrait" />
+      </div>
+      <button class="carousel-btn next" aria-label="Next slide" data-dir="1">›</button>
+    </div>
+
+  </main>
+  <footer>
+    <ul id="btmtext"><li><h6>&copy; <span id="year"></span> Marisa Olusemo</h6></li></ul>
+  </footer>
+  <script src="js/fixedNavMenu.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/vid.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/activeNav.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+<html>

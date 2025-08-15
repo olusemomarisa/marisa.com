@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Marisa Olusemo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <h1><a href="index.html">Marisa Olusemo</a></h1>
+      <h2><a href="index.html#contact">Get in touch</a></h2>
+    </div>
+  </header>
+  <nav class="container" role="navigation" aria-label="Primary">
+    <ul class="clearfix" id="cfix">
+      <li class="icon" id="icon"><a href="javascript:void(0);" onclick="myMenu()">&#9776; Menu</a></li>
+      <li>
+        <ul class="scroll" id="scroll">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="advocacy.html">Advocacy</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li class="selected"><a href="contact.html">Contact</a></li>
+          <li><button class="theme-toggle" id="theme-toggle" type="button">Theme</button></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="site_content_index">
+    <div class="contact">
+      <p>Contact Me</p>
+      <form id="contact-form" method="POST" action="https://formsubmit.co/olusemomarisa@gmail.com">
+        <div class="form_settings">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New message from marisa.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="thanks.html" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <label class="sr-only" for="name">Name</label>
+          <input class="name" id="name" type="text" name="name" placeholder="Name" required />
+          <label class="sr-only" for="email">Email</label>
+          <input class="email" id="email" type="email" name="email" placeholder="Email" required />
+          <label class="sr-only" for="subject">Subject</label>
+          <input class="subject" id="subject" type="text" name="subject" placeholder="Subject" required />
+          <label class="sr-only" for="message">Message</label>
+          <textarea class="message" id="message" rows="4" cols="50" name="message" placeholder="Message" required></textarea>
+          <div>
+            <button class="submit" type="submit">Send</button>
+          </div>
+          <p class="help">Tip: You can also DM on Instagram <a href="https://instagram.com/_marisao_" target="_blank" rel="noopener">@_marisao_</a>.</p>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <ul id="btmtext"><li><h6>&copy; <span id="year"></span> Marisa Olusemo</h6></li></ul>
+  </footer>
+  <script src="js/fixedNavMenu.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/activeNav.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advocacy | Marisa Olusemo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <h1><a href="index.html">Marisa Olusemo</a></h1>
+      <h2><a href="index.html#advocacy">Advocacy & Impact</a></h2>
+    </div>
+  </header>
+  <nav class="container" role="navigation" aria-label="Primary">
+    <ul class="clearfix" id="cfix">
+      <li class="icon" id="icon"><a href="javascript:void(0);" onclick="myMenu()">&#9776; Menu</a></li>
+      <li>
+        <ul class="scroll" id="scroll">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li class="selected"><a href="advocacy.html">Advocacy</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><button class="theme-toggle" id="theme-toggle" type="button">Theme</button></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="site_content_index">
+    <section class="section-intro">
+      <h3 class="anchor">Advocacy & Platforms</h3>
+      <p>Highlights from Barnardo’s, Young Carers, Capital FM, Clarence House and more.</p>
+    </section>
+
+    <div class="cards">
+      <article class="card">
+        <header><h4>Barnardo’s & Young Carers</h4></header>
+        <ul>
+          <li>Wellbeing Hubs and Young Carers initiatives; contribution to Believe Magazine.</li>
+          <li>Volunteer and participant quotes in Barnardo’s London region news.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <header><h4>Royal Engagement — Clarence House</h4></header>
+        <p>Tea at Clarence House with Barnardo’s young carers; coverage included HELLO! Magazine and official social posts.</p>
+      </article>
+      <article class="card">
+        <header><h4>Capital FM — Billie Eilish Surprise</h4></header>
+        <p>Featured across radio and press when Billie Eilish surprised Marisa on Capital FM; covered by several outlets.</p>
+      </article>
+    </div>
+  </main>
+  <footer>
+    <ul id="btmtext"><li><h6>&copy; <span id="year"></span> Marisa Olusemo</h6></li></ul>
+  </footer>
+  <script src="js/fixedNavMenu.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/activeNav.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

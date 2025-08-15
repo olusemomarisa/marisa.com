@@ -7,6 +7,7 @@
   <title>Marisa Olusemo — Portfolio</title>
   <meta name="description" content="Official site of Marisa Olusemo — musician, producer, audio engineer, singer, songwriter, and advocate." />
   <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=github.io" />
+  <meta name="color-scheme" content="light dark" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   
@@ -27,11 +28,12 @@
       </li>
       <li>
         <ul class="scroll" id="scroll">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#music">Work</a></li>
-          <li><a href="#advocacy">Advocacy</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+            <li class="selected"><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="advocacy.html">Advocacy</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button class="theme-toggle" id="theme-toggle" type="button">Theme</button></li>
         </ul>
       </li>
     </ul>
@@ -45,237 +47,16 @@
           <div class="hero-kicker">Portfolio</div>
           <h1 class="hero-title">Marisa Olusemo</h1>
           <p class="hero-sub">Musician, producer, audio engineer, singer, songwriter and advocate crafting work across music, film and community impact.</p>
-          <div class="cta-row">
-            <a class="btn alt" href="#music">View Work</a>
-            <a class="btn ghost" href="#contact">Get in touch</a>
-          </div>
+              <div class="cta-row">
+                <a class="btn alt" href="work.html">View Work</a>
+                <a class="btn ghost" href="contact.html">Get in touch</a>
+              </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="site_content_index">
-    <div id="content">
-
-      <div class="anchor-box">
-        <hr class="horizontal" />
-        <section id="music" aria-label="Featured Work">
-          <h3 class="anchor">Featured Work</h3>
-        </section>
-        <hr class="horizontal" />
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <header><h4>Relevance — D–1 (Lead Vocal)</h4></header>
-          <p>Original music video created in a Sony Music Project with Dee Digital. Marisa was the lead vocalist and only singer in the group D‑1. The song was made under time pressure in 4 hours.</p>
-          <div class="video">
-            <div class="youtube-player" data-id="2_rwCbVFsDY" aria-label="Relevance video"></div>
-          </div>
-          <p><a class="btn" href="https://youtu.be/2_rwCbVFsDY" target="_blank" rel="noopener">Watch on YouTube</a></p>
-        </article>
-
-        <article class="card">
-          <header><h4>Looking Within — Final Year Project</h4></header>
-          <p>Music Video / Documentary style project — a collection of songs written, produced and performed by Marisa (co‑lyricist Nathan Brown‑Bennett). Marisa handled lighting, filming, directing, planning, set design, video editing, recording and producing in 5 days.</p>
-          <div class="video">
-            <div class="youtube-player" data-id="k7Oax-m1lbY" aria-label="Looking Within video"></div>
-          </div>
-          <p><a class="btn" href="https://youtu.be/k7Oax-m1lbY" target="_blank" rel="noopener">Watch on YouTube</a></p>
-        </article>
-
-        <article class="card">
-          <header>
-            <h4>DeeDigital Channel</h4>
-          </header>
-          <p>Interviews hosted and directed by Marisa and the music video ‘Relevance’ are featured on the DeeDigital Music channel.</p>
-          <p><a class="btn" href="https://www.youtube.com/@DeeDigitalMusiccm" target="_blank" rel="noopener">Visit Channel</a></p>
-        </article>
-      </div>
-
-  <div class="anchor-box"><h4 class="center">Podcasts & Broadcasting</h4></div>
-      <div class="cards">
-        <article class="card">
-          <header><h4>Powerful Words — Radio Show Interview</h4></header>
-          <p>This podcast is about giving people a platform to voice their opinions on mental health, race, problems going on in the world, and projects they are working on. The aim is to give people a voice and motivate listeners to know that their thoughts are valid and that they can make a difference in the world. Check out this interview recorded for KURadio.</p>
-          <div class="soundcloud-embed" aria-label="SoundCloud player: Powerful Words — Radio Show Interview">
-            <iframe allow="autoplay" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-409936462/powerful-words-radio-show-interview&color=%23A736EC&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-            </iframe>
-          </div>
-          <p><a class="btn" href="https://soundcloud.com/user-409936462/powerful-words-radio-show-interview" target="_blank" rel="noopener">Open on SoundCloud</a></p>
-        </article>
-        <article class="card">
-          <header><h4>DeeDigital Podcast — Violence in Drill</h4></header>
-          <p>This podcast discusses violence in drill music and how it influences youth today. Marisa interviewed fellow artists from D‑1 to talk about how their song ‘Relevance’ spreads a positive message.</p>
-          <p><a class="btn" href="https://www.youtube.com/watch?v=bZjqDbGldHQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
-        </article>
-      </div>
-
-  <div class="anchor-box"><h4 class="center">Gallery</h4></div>
-      <div class="carousel" role="region" aria-label="Marisa photo carousel">
-        <button class="carousel-btn prev" aria-label="Previous slide" data-dir="-1">‹</button>
-        <div class="carousel-track" tabindex="0">
-          <img src="Edited/Portrait.jpg" alt="Marisa portrait" />
-          <img src="Edited/Side-eye%20Mawisa.jpg" alt="Marisa side-eye pose" />
-          <img src="Edited/Top-Down-BW.jpg" alt="Top down black and white portrait" />
-          <img src="Edited/BW%20Badass.jpg" alt="Black and white studio shot" />
-          <img src="Edited/upright-smile.jpg" alt="Marisa upright smiling" />
-          <img src="Edited/Blueface.jpg" alt="Blue toned portrait" />
-        </div>
-        <button class="carousel-btn next" aria-label="Next slide" data-dir="1">›</button>
-      </div>
-
-  <div class="anchor-box"><h4 class="center">From the archives</h4></div>
-      <div class="cards">
-        <article class="card">
-          <img src="https://static.wixstatic.com/media/e44163_24e3ad167efd47cab4b7ea0e23c7b308~mv2.png/v1/fill/w_980%2Ch_975%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/e44163_24e3ad167efd47cab4b7ea0e23c7b308~mv2.png" alt="Marisa portrait graphic" style="width:100%;border-radius:6px;" />
-        </article>
-        <article class="card">
-          <img src="https://static.wixstatic.com/media/e44163_11bfaa44da5a4f04805f11b9061ecebf~mv2.jpg/v1/crop/x_158%2Cy_0%2Cw_592%2Ch_824/fill/w_302%2Ch_422%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Screenshot%202024-03-07%20at%2016_54_edited_jp.jpg" alt="Behind the scenes still" style="width:100%;border-radius:6px;" />
-        </article>
-        <article class="card">
-          <img src="https://static.wixstatic.com/media/11062b_6e5846f5d56f407bbc878b769eade380~mv2.jpg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/11062b_6e5846f5d56f407bbc878b769eade380~mv2.jpg" alt="Recording studio" style="width:100%;border-radius:6px;" />
-        </article>
-      </div>
-
-      <div class="social-buttons">
-        <a class="btn" href="https://x.com/MarisaOlusemo" target="_blank" rel="noopener" aria-label="Marisa on X (Twitter)">X (Twitter): @MarisaOlusemo</a>
-  <a class="btn" href="https://instagram.com/_marisao_" target="_blank" rel="noopener" aria-label="Marisa on Instagram">Instagram: @_marisao_</a>
-        <a class="btn" href="https://soundcloud.com/search?q=Marisa%20Olusemo" target="_blank" rel="noopener" aria-label="SoundCloud search for Marisa Olusemo">SoundCloud: Marisa Olusemo</a>
-      </div>
-
-      <div class="anchor-box">
-        <hr class="horizontal" />
-        <section id="advocacy" aria-label="Advocacy and Impact">
-          <h3 class="anchor">Advocacy & Impact</h3>
-        </section>
-        <hr class="horizontal" />
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <header><h4>Barnardo’s & Young Carers</h4></header>
-          <p>Marisa has been an advocate with Barnardo’s, contributing to their Wellbeing Hubs and Young Carers initiatives, and writing for Believe Magazine.</p>
-          <ul>
-            <li>Volunteer and participant quotes featured in Barnardo’s London region news.</li>
-            <li>Believe Magazine (Summer 2020) intro and experiences at the Wellbeing Hub.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <header><h4>Royal Engagement — Clarence House</h4></header>
-          <p>Invited to tea at Clarence House with Barnardo’s young carers; coverage included HELLO! Magazine and official posts by Barnardo’s and Marisa.</p>
-        </article>
-        <article class="card">
-          <header><h4>Capital FM — Billie Eilish Surprise</h4></header>
-          <p>Featured across radio and press when Billie Eilish surprised Marisa on Capital FM; covered by Capital FM, Business Insider, the Evening Standard, and others.</p>
-        </article>
-        <article class="card">
-          <header><h4>Press & Platforms</h4></header>
-          <ul>
-            <li>‘Relevance’ — credit + music video listing (Shazam)</li>
-            <li>SoundCloud, Instagram, X (Twitter) for updates and releases</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="anchor-box">
-        <hr class="horizontal" />
-        <section id="press" aria-label="Press and Highlights">
-          <h3 class="anchor">Press & Highlights</h3>
-        </section>
-        <hr class="horizontal" />
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <header><h4>Capital FM — Billie Eilish Surprise</h4></header>
-          <ul>
-            <li>Capital FM’s write-up and video: “WATCH: Billie Eilish Surprises Her Biggest Fan” — names Marisa, 16.</li>
-            <li>Capital FM YouTube upload of the moment.</li>
-            <li>Business Insider recap (with quotes).</li>
-            <li>Evening Standard recap.</li>
-            <li>iHeart write-up (syndicated) + Tampa Bay Mix mirror.</li>
-            <li>OnTheRadio (radio industry news) summary.</li>
-            <li>Barnardo’s tweet amplifying the surprise.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <header><h4>Royal Engagement — Clarence House</h4></header>
-          <ul>
-            <li>HELLO! Magazine: names Marisa (17) visiting Clarence House with Barnardo’s young carers.</li>
-            <li>Barnardo’s official X post: “Royal-tea and biscuits ☕ Marisa and Rameen…”</li>
-            <li>Marisa’s Instagram mention from Clarence House.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <header><h4>Barnardo’s & Wellbeing Hubs</h4></header>
-          <ul>
-            <li>Believe Magazine (Summer 2020) — Marisa writes the intro and reflects on the Young Carers Club.</li>
-            <li>Barnardo’s London region news: Riverboat cruise (Aug 2022) — quotes Marisa, now volunteering.</li>
-            <li>Young Carers support pages and the Redbridge Council directory for Indigo Young Carers (Barnardo’s).</li>
-          </ul>
-        </article>
-        <article class="card">
-          <header><h4>Press Association / News</h4></header>
-          <p>Belfast Telegraph (PA wire): Health reforms ‘could leave more children caring…’ — lists “Marisa Olusemo, 18 (Barnardo’s)” among interviewees.</p>
-        </article>
-        <article class="card">
-          <header><h4>Extra — Music Collabs / Arts</h4></header>
-          <p>Instagram performance/collab tags featuring @marisao (incl. Croydonites Festival context).</p>
-        </article>
-      </div>
-
-      <div class="anchor-box">
-        <hr class="horizontal" />
-        <section id="blog" aria-label="Blog">
-          <h3 class="anchor">Blog</h3>
-        </section>
-        <hr class="horizontal" />
-      </div>
-
-      <ul class="grid">
-  <li class="grid_item span g"><a href="blog/relevance.html" class="grid_link"><div class="tile">Relevance: D‑1 x DeeDigital</div></a></li>
-  <li class="grid_item span h"><a href="blog/looking-within.html" class="grid_link"><div class="tile">Looking Within (BA Project)</div></a></li>
-  <li class="grid_item span i"><a href="blog/deedigital.html" class="grid_link"><div class="tile">DeeDigital Interviews</div></a></li>
-      </ul>
-  <p class="center"><a class="btn" href="projects.html">View Projects</a></p>
-
-      <div class="anchor-box">
-        <hr class="horizontal" />
-        <section id="contact" aria-label="Contact">
-          <h3 class="anchor">Contact</h3>
-        </section>
-        <hr class="horizontal" />
-      </div>
-
-      <div class="contact">
-        <p>Contact Me</p>
-        <form id="contact-form" method="POST" action="https://formsubmit.co/olusemomarisa@gmail.com">
-          <div class="form_settings">
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="New message from marisa.com" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="thanks.html" />
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-            <label class="sr-only" for="name">Name</label>
-            <input class="name" id="name" type="text" name="name" placeholder="Name" required />
-            <label class="sr-only" for="email">Email</label>
-            <input class="email" id="email" type="email" name="email" placeholder="Email" required />
-            <label class="sr-only" for="subject">Subject</label>
-            <input class="subject" id="subject" type="text" name="subject" placeholder="Subject" required />
-            <label class="sr-only" for="message">Message</label>
-            <textarea class="message" id="message" rows="4" cols="50" name="message" placeholder="Message" required></textarea>
-            <div>
-              <button class="submit" type="submit">Send</button>
-            </div>
-            <p class="help">Tip: You can also DM on Instagram <a href="https://instagram.com/_marisao_" target="_blank" rel="noopener">@_marisao_</a>.</p>
-          </div>
-        </form>
-      </div>
-
-    </div>
-  </div>
+  <!-- Compact landing only -->
 
   <footer>
     <nav class="social-footer" aria-label="Social links">
@@ -305,6 +86,8 @@
   <script src="js/scroll.js"></script>
   <script src="js/vid.js"></script>
   <script src="js/carousel.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/activeNav.js"></script>
   <script>
     // Current year
     document.getElementById('year').textContent = new Date().getFullYear();
