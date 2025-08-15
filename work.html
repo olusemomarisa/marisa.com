@@ -16,49 +16,50 @@
   </header>
   
 
-  <main class="site_content_index">
+  <main class="site_content_index sections-carousel">
     <div class="section-nav">
-      <a class="btn" href="#work-section">Selected Work</a>
-      <a class="btn" href="#podcasts-section">Podcasts & Broadcasting</a>
+      <button class="btn" data-goto="0">Selected Work</button>
+      <button class="btn" data-goto="1">Podcasts & Broadcasting</button>
     </div>
 
-    <section id="work-section" class="section-intro">
-      <h3 class="anchor">Selected Work</h3>
-      <p class="muted">A few projects across music and video. See case studies for credits and process.</p>
-      <div class="cards">
-        <article class="card">
-          <header><h4>Relevance — D–1 (Lead Vocal)</h4></header>
-          <p>Original music video created under tight time constraints in a Sony Music Project with Dee Digital.</p>
-          <div class="video"><div class="youtube-player" data-id="2_rwCbVFsDY"></div></div>
-          <p><a class="btn" href="work/relevance.html">Case study</a> <a class="btn alt" href="https://youtu.be/2_rwCbVFsDY" target="_blank" rel="noopener">Watch</a></p>
-        </article>
-        <article class="card">
-          <header><h4>Looking Within — Final Year Project</h4></header>
-          <p>Collection of songs written, produced and performed by Marisa. Lighting, filming, directing, set design and editing in 5 days.</p>
-          <div class="video"><div class="youtube-player" data-id="k7Oax-m1lbY"></div></div>
-          <p><a class="btn" href="work/looking-within.html">Case study</a> <a class="btn alt" href="https://youtu.be/k7Oax-m1lbY" target="_blank" rel="noopener">Watch</a></p>
-        </article>
-      </div>
-    </section>
+    <div class="sections-track" id="sections-track">
+      <section class="section-intro section-slide" aria-label="Selected Work">
+        <h3 class="anchor">Selected Work</h3>
+        <p class="muted">A few projects across music and video. See case studies for credits and process.</p>
+        <div class="cards">
+          <article class="card">
+            <header><h4>Relevance — D–1 (Lead Vocal)</h4></header>
+            <p>Original music video created under tight time constraints in a Sony Music Project with Dee Digital.</p>
+            <div class="video"><div class="youtube-player" data-id="2_rwCbVFsDY"></div></div>
+            <p><a class="btn" href="work/relevance.html">Case study</a> <a class="btn alt" href="https://youtu.be/2_rwCbVFsDY" target="_blank" rel="noopener">Watch</a></p>
+          </article>
+          <article class="card">
+            <header><h4>Looking Within — Final Year Project</h4></header>
+            <p>Collection of songs written, produced and performed by Marisa. Lighting, filming, directing, set design and editing in 5 days.</p>
+            <div class="video"><div class="youtube-player" data-id="k7Oax-m1lbY"></div></div>
+            <p><a class="btn" href="work/looking-within.html">Case study</a> <a class="btn alt" href="https://youtu.be/k7Oax-m1lbY" target="_blank" rel="noopener">Watch</a></p>
+          </article>
+        </div>
+      </section>
 
-    <section id="podcasts-section" class="section-intro">
-      <h3 class="anchor">Podcasts & Broadcasting</h3>
-      <div class="cards">
-        <article class="card">
-          <header><h4>Powerful Words — Radio Show Interview</h4></header>
-          <div class="soundcloud-embed">
-            <iframe allow="autoplay" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-409936462/powerful-words-radio-show-interview&color=%237A5CFA&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-          </div>
-          <p><a class="btn" href="https://soundcloud.com/user-409936462/powerful-words-radio-show-interview" target="_blank" rel="noopener">Open on SoundCloud</a></p>
-        </article>
-        <article class="card">
-          <header><h4>DeeDigital Podcast — Violence in Drill</h4></header>
-          <p>Discussion on violence in drill and its influence on youth; featuring artists from D–1 on how ‘Relevance’ spreads a positive message.</p>
-          <p><a class="btn alt" href="https://www.youtube.com/watch?v=bZjqDbGldHQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
-        </article>
-      </div>
-    </section>
-
+      <section class="section-intro section-slide" aria-label="Podcasts & Broadcasting">
+        <h3 class="anchor">Podcasts & Broadcasting</h3>
+        <div class="cards">
+          <article class="card">
+            <header><h4>Powerful Words — Radio Show Interview</h4></header>
+            <div class="soundcloud-embed">
+              <iframe allow="autoplay" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-409936462/powerful-words-radio-show-interview&color=%237A5CFA&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </div>
+            <p><a class="btn" href="https://soundcloud.com/user-409936462/powerful-words-radio-show-interview" target="_blank" rel="noopener">Open on SoundCloud</a></p>
+          </article>
+          <article class="card">
+            <header><h4>DeeDigital Podcast — Violence in Drill</h4></header>
+            <p>Discussion on violence in drill and its influence on youth; featuring artists from D–1 on how ‘Relevance’ spreads a positive message.</p>
+            <p><a class="btn alt" href="https://www.youtube.com/watch?v=bZjqDbGldHQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
+          </article>
+        </div>
+      </section>
+    </div>
   </main>
   <nav class="container" role="navigation" aria-label="Primary">
     <ul class="clearfix" id="cfix">
@@ -83,6 +84,16 @@
   <script src="js/carousel.js"></script>
   <script src="js/background.js"></script>
   <script src="js/activeNav.js"></script>
+  <script>
+    // horizontal two-section carousel
+    (function(){
+      const track = document.getElementById('sections-track');
+      if(!track) return;
+      const buttons = document.querySelectorAll('.section-nav [data-goto]');
+      function goto(i){ track.style.transform = `translateX(${i === 0 ? '0' : '-50%'})`; }
+      buttons.forEach(btn=>btn.addEventListener('click', ()=>goto(parseInt(btn.dataset.goto,10)||0)));
+    })();
+  </script>
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 <html>

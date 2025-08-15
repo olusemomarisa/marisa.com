@@ -11,6 +11,8 @@
   --shadow: 0 10px 30px rgba(0,0,0,.08);
   --radius: 14px;
   --footer-h: 80px;
+  --header-h: 64px;
+  --nav-h: 56px;
 }
 
 html, body { height: 100%; }
@@ -23,7 +25,9 @@ body {
   letter-spacing: .01em;
   padding-top: 0;
   padding-bottom: calc(var(--footer-h) + 16px); /* space for fixed footer */
+  overflow: hidden; /* no scrolling by default */
 }
+body.scrollable { overflow: auto; }
 
 /* Header band (brand strip) */
 header { background: #fff; height: 64px; border-bottom: 1px solid var(--line); }
@@ -40,7 +44,7 @@ nav { background: var(--surface); border-bottom: 1px solid var(--line); box-shad
 .clearfix, .scroll { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; gap: 2px; }
 .scroll li { display: inline-flex; }
 .scroll a {
-  display: block; padding: 0 14px; line-height: 48px; border-radius: 10px;
+  display: block; padding: 0 14px; line-height: var(--nav-h); border-radius: 10px;
   color: var(--text); text-decoration: none; font-weight: 600; transition: background .2s ease, color .2s ease;
 }
 .scroll a:hover, nav li.selected a { background: #f2f2f2; color: var(--text); }
@@ -157,3 +161,14 @@ img { max-width: 100%; height: auto; }
 .section-nav { display:flex; gap:.6rem; justify-content:center; margin:.5rem 0 1rem; }
 .section-nav .btn { background: var(--accent); }
 .tiny { font-size: .9rem; color: var(--muted); }
+
+/* Two-section horizontal carousel for work.html */
+.sections-carousel { overflow: hidden; }
+.sections-track { display: flex; width: 200%; transition: transform .5s ease; will-change: transform; }
+.section-slide { flex: 0 0 50%; padding: .5rem 0 0; height: calc(100vh - var(--header-h) - var(--nav-h) - var(--footer-h) - 24px); overflow: hidden; }
+.section-slide .cards { height: 100%; align-content: start; }
+.section-slide .card { height: auto; }
+
+/* Blog instagram grid */
+.insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; align-items: start; }
+.insta-grid blockquote.instagram-media { width: 100% !important; max-width: none !important; }
