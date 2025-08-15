@@ -256,8 +256,13 @@
 
       <div class="contact">
         <p>Contact Me</p>
-        <form id="contact-form" onsubmit="return false;">
+        <form id="contact-form" method="POST" action="https://formsubmit.co/olusemomarisa@gmail.com">
           <div class="form_settings">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New message from marisa.com" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="thanks.html" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
             <label class="sr-only" for="name">Name</label>
             <input class="name" id="name" type="text" name="name" placeholder="Name" required />
             <label class="sr-only" for="email">Email</label>
@@ -267,7 +272,7 @@
             <label class="sr-only" for="message">Message</label>
             <textarea class="message" id="message" rows="4" cols="50" name="message" placeholder="Message" required></textarea>
             <div>
-              <button class="submit" id="sendMail" type="button">Send Email</button>
+              <button class="submit" type="submit">Send</button>
             </div>
             <p class="help">Tip: You can also DM on Instagram <a href="https://instagram.com/_marisao_" target="_blank" rel="noopener">@_marisao_</a>.</p>
           </div>
@@ -278,6 +283,24 @@
   </div>
 
   <footer>
+    <nav class="social-footer" aria-label="Social links">
+      <a href="https://x.com/MarisaOlusemo" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 3h3.8l5.1 7.3L16.4 3H21l-7.8 10.6L21 21h-3.8l-5.5-7.8L7.6 21H3l8-10.7L3 3z" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/_marisao_" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" fill="currentColor"/>
+          <circle cx="18.5" cy="5.5" r="1.5" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="https://soundcloud.com/search?q=Marisa%20Olusemo" target="_blank" rel="noopener" aria-label="SoundCloud">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M11 8a5 5 0 014.58 2.86A4 4 0 1120 19H7a3 3 0 110-6c.23 0 .46.02.68.07A5 5 0 0111 8z" fill="currentColor"/>
+        </svg>
+      </a>
+    </nav>
     <ul id="btmtext">
       <li><h6>Copyright &copy; <span id="year"></span> Marisa Olusemo. All Rights Reserved.</h6></li>
     </ul>
@@ -288,19 +311,6 @@
   <script src="js/vid.js"></script>
   <script src="js/carousel.js"></script>
   <script>
-    // Build mailto link from form
-    (function(){
-      const btn = document.getElementById('sendMail');
-      if(!btn) return;
-      btn.addEventListener('click', function(){
-        const name = encodeURIComponent(document.getElementById('name').value.trim());
-        const email = encodeURIComponent(document.getElementById('email').value.trim());
-        const subject = encodeURIComponent(document.getElementById('subject').value.trim());
-        const body = encodeURIComponent(document.getElementById('message').value + `\n\nFrom: ${decodeURIComponent(name)} <${decodeURIComponent(email)}>`);
-  const to = 'olusemomarisa@gmail.com';
-        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      });
-    })();
     // Current year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

@@ -80,6 +80,9 @@ input, textarea { padding: .6rem .7rem; border: 1px solid #c9c9c9; border-radius
 footer { padding: 1rem; background:#333a56; color:#fff; }
 #btmtext { list-style:none; padding:0; margin:0; text-align:center; }
 #btmtext h6 { color:#fff; font-weight: 400; }
+.social-footer { display:flex; gap:1rem; align-items:center; justify-content:center; padding:.5rem 0; }
+.social-footer a { color:#fff; opacity:.9; }
+.social-footer a:hover { opacity:1; }
 
 /* Utility */
 .center { text-align:center; }
