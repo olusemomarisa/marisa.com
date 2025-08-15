@@ -1,0 +1,14 @@
+# OS junk
+.DS_Store
+
+# Photoshop and other large binaries (keep out of repo)
+*.psd
+*.ai
+*.pdf
+
+# Node/logs (if ever added locally)
+node_modules/
+*.log
+
+# Build caches
+.cache/
