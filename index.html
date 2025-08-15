@@ -147,7 +147,7 @@
 
       <div class="social-buttons">
         <a class="btn" href="https://x.com/MarisaOlusemo" target="_blank" rel="noopener" aria-label="Marisa on X (Twitter)">X (Twitter): @MarisaOlusemo</a>
-        <a class="btn" href="https://instagram.com/marisao" target="_blank" rel="noopener" aria-label="Marisa on Instagram">Instagram: @marisao</a>
+  <a class="btn" href="https://instagram.com/_marisao_" target="_blank" rel="noopener" aria-label="Marisa on Instagram">Instagram: @_marisao_</a>
         <a class="btn" href="https://soundcloud.com/search?q=Marisa%20Olusemo" target="_blank" rel="noopener" aria-label="SoundCloud search for Marisa Olusemo">SoundCloud: Marisa Olusemo</a>
       </div>
 
@@ -269,7 +269,7 @@
             <div>
               <button class="submit" id="sendMail" type="button">Send Email</button>
             </div>
-            <p class="help">Tip: You can also DM on Instagram <a href="https://instagram.com/marisao" target="_blank" rel="noopener">@marisao</a>.</p>
+            <p class="help">Tip: You can also DM on Instagram <a href="https://instagram.com/_marisao_" target="_blank" rel="noopener">@_marisao_</a>.</p>
           </div>
         </form>
       </div>
@@ -297,8 +297,7 @@
         const email = encodeURIComponent(document.getElementById('email').value.trim());
         const subject = encodeURIComponent(document.getElementById('subject').value.trim());
         const body = encodeURIComponent(document.getElementById('message').value + `\n\nFrom: ${decodeURIComponent(name)} <${decodeURIComponent(email)}>`);
-        // TODO: Replace with Marisa's preferred email address
-        const to = 'contact@example.com';
+  const to = 'olusemomarisa@gmail.com';
         window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
       });
     })();
