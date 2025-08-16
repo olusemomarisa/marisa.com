@@ -10,9 +10,18 @@
   --accent-2: #2EC5D3; /* cyan pop */
   --shadow: 0 10px 30px rgba(0,0,0,.08);
   --radius: 14px;
-  --footer-h: 60px;
-  --header-h: 40px;
-  --nav-h: 56px;
+  /* Layout heights (must match actual components) */
+  --footer-h: 56px;   /* fixed footer height */
+  --header-h: 64px;   /* header element height */
+  --nav-h: 56px;      /* bottom nav height */
+  /* Safe area for iOS/Android gesture bar */
+  --safe-area-bottom: env(safe-area-inset-bottom);
+  /* Work cards unified height (shorter) */
+  --work-card-h: clamp(260px, 36vh, 400px);
+}
+/* Legacy iOS 11 support */
+@supports (padding: constant(safe-area-inset-bottom)) {
+  :root { --safe-area-bottom: constant(safe-area-inset-bottom); }
 }
 
 html, body { height: 100%; }
@@ -24,13 +33,14 @@ body {
   line-height: 1.6;
   letter-spacing: .01em;
   padding-top: 0;
-  padding-bottom: calc(var(--footer-h) + var(--nav-h) + 16px); /* space for fixed footer & bottom nav */
+  /* space for fixed footer & bottom nav + device safe area */
+  padding-bottom: calc(var(--footer-h) + var(--nav-h) + var(--safe-area-bottom));
   overflow: hidden; /* no scrolling by default */
 }
 body.scrollable { overflow: auto; }
 
 /* Header band (brand strip) */
-header { background: #fff; height: 64px; border-bottom: 1px solid var(--line); }
+header { background: #fff; height: 64px; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 1200; }
 #logo { max-width: 1100px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; justify-content: center; gap: .8rem; flex-wrap: wrap; }
 #logo h1, #logo h2 { margin: 0; }
 #logo h1 { font-weight: 800; font-size: clamp(20px, 2.2vw, 28px); letter-spacing: .02em; }
@@ -38,7 +48,7 @@ header { background: #fff; height: 64px; border-bottom: 1px solid var(--line); }
 #logo a { color: inherit; text-decoration: none; }
 
 /* Navigation (fixed above footer) */
-.container { position: fixed; left: 0; right: 0; bottom: var(--footer-h); z-index: 1000; }
+.container { position: fixed; left: 0; right: 0; bottom: calc(var(--footer-h) + var(--safe-area-bottom)); z-index: 1100; }
 .container-scrolled { top: 0; }
 nav { background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 2px 14px rgba(0,0,0,.04); }
 .clearfix, .scroll { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; gap: 2px; }
@@ -51,12 +61,15 @@ nav { background: var(--surface); border-bottom: 1px solid var(--line); box-shad
 nav li.selected a { font-weight: 800; }
 .scroll a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 #icon { display: none; }
+/* Keep bottom nav always visible and compact on smaller screens */
 @media (max-width: 900px){
-  #icon { display: inline-block; }
-  #cfix { flex-wrap: wrap; }
-  #cfix li:not(:nth-child(-n+0)){ display:none; }
-  #cfix.responsive li { display: inline; width: 100%; }
-  #cfix.responsive a { display: block; padding: 0 20px; text-align: left; }
+  #icon { display: none; }
+  .scroll { flex-wrap: nowrap; justify-content: space-between; gap: 0; }
+  .scroll a { padding: 0 10px; font-size: 14px; }
+}
+@media (max-width: 480px){
+  :root { --nav-h: 48px; --footer-h: 52px; }
+  .scroll a { padding: 0 8px; font-size: 13px; }
 }
 
 /* Sections and layout */
@@ -135,15 +148,16 @@ input, textarea { padding: .75rem .85rem; border: 1px solid var(--line); border-
 .help { color: var(--muted); font-size: .95rem; text-align: center; }
 
 /* Footer */
-footer { position: fixed; left: 0; right: 0; bottom: 0; height: var(--footer-h); padding: 12px 12px; background: #0f0f10; color:#fff; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; }
-#btmtext { list-style:none; padding:0; margin:0; text-align:center; }
-#btmtext h6 { color:#cfcfcf; font-weight: 400; }
-.social-footer { display:flex; gap:6rem; align-items:center; justify-content:center; padding:2.5rem 6rem 0rem; background: transparent; }
-.social-footer a { color:#fff; opacity:.9; display:inline-flex; }
-.social-footer a:hover { opacity:1; }
-.social-footer svg { width: 26px; height: 26px; }
-@media (min-width: 768px){ .social-footer svg { width: 28px; height: 28px; } }
-@media (min-width: 1024px){ .social-footer svg { width: 32px; height: 32px; } }
+footer { position: fixed; left: 0; right: 0; bottom: 0; height: var(--footer-h); background: #0f0f10; color:#fff; z-index: 1000; padding-bottom: var(--safe-area-bottom); }
+.footer-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; gap: 8px; max-width: 1200px; margin: 0 auto; }
+.social-group { display:flex; align-items:center; gap: 10px; flex: 0 0 auto; }
+.social-group a { color:#fff; opacity:.9; display:inline-flex; }
+.social-group a:hover { opacity:1; }
+.social-group svg { width: 24px; height: 24px; }
+.copyright { text-align:center; flex: 1 1 auto; }
+.copyright h6 { color:#cfcfcf; font-weight:400; margin: 0; font-size: 14px; }
+@media (max-width: 768px){ .social-group svg { width: 22px; height: 22px; } .social-group { gap: 8px; } .copyright h6{ font-size:13px; } }
+@media (max-width: 420px){ .social-group svg { width: 20px; height: 20px; } .footer-inner{ padding: 0 8px; } }
 
 /* Utilities */
 .center { text-align:center; }
@@ -168,9 +182,67 @@ img { max-width: 100%; height: auto; }
 /* Two-section horizontal carousel for work.html */
 .sections-carousel { overflow: hidden; }
 .sections-track { display: flex; width: 200%; transition: transform .5s ease; will-change: transform; }
-.section-slide { flex: 0 0 50%; padding: .5rem 0 0; height: calc(100vh - var(--header-h) - var(--nav-h) - var(--footer-h) - 24px); overflow: hidden; }
+.section-slide { flex: 0 0 50%; padding: .35rem 0 .2rem; height: calc(100vh - var(--header-h) - var(--nav-h) - var(--footer-h) - var(--safe-area-bottom)); overflow: hidden; }
 .section-slide .cards { height: 100%; align-content: start; }
 .section-slide .card { height: auto; }
+
+/* Tighter spacing on Work page (sections-carousel) */
+.sections-carousel .section-intro { gap: .25rem; margin-bottom: .2rem; }
+.sections-carousel h3.anchor { margin: 0 0 .1rem; }
+.sections-carousel p.muted { margin: .05rem 0 .12rem; }
+.sections-carousel .cards { margin: .1rem 0 0; gap: .5rem; grid-auto-rows: var(--work-card-h); }
+.sections-carousel .card { padding: .9rem .95rem .9rem .75rem; height: 100%; display: flex; flex-direction: column; }
+@media (max-width: 640px){
+  .sections-carousel .card { padding: .85rem .9rem .85rem .7rem; }
+}
+/* Work page: media embeds inside cards */
+.sections-carousel .youtube-player { margin: .3rem auto; }
+/* Make YouTube embeds a bit shorter to align with podcast cards */
+.sections-carousel .youtube-player { padding-bottom: 40%; }
+/* Visually reduce video width so it doesn't look overstretched inside the card */
+.sections-carousel .video, 
+.sections-carousel .youtube-player { width: 92%; }
+@media (min-width: 900px){
+  .sections-carousel .video, .sections-carousel .youtube-player { width: 88%; }
+}
+@media (max-width: 640px){
+  .sections-carousel .video, .sections-carousel .youtube-player { width: 94%; }
+}
+@media (max-width: 640px){
+  .sections-carousel .youtube-player { padding-bottom: 44%; }
+}
+@media (min-width: 900px){
+  /* On larger screens, make video a bit shorter so buttons/text never clip */
+  .sections-carousel .youtube-player { padding-bottom: 36%; }
+}
+/* Wider cards on larger screens: 2 roomy columns with a small gap */
+@media (min-width: 900px){
+  .sections-carousel .cards { grid-template-columns: repeat(2, minmax(460px, 1fr)); }
+}
+
+/* Scale-to-fit wrapper for work slides */
+.slide-content { transform-origin: top center; margin: 0 auto; }
+@media (max-height: 680px){
+  .sections-carousel .card { padding: .9rem; }
+  .sections-carousel .cards { gap: .6rem; }
+}
+
+/* Small screens: ensure a clearer vertical gap and reduce card height so both cards fit between header and bottom bars */
+@media (max-width: 640px){
+  :root { --work-card-h: clamp(220px, 32vh, 360px); }
+  .sections-carousel .cards { gap: .85rem; }
+  .sections-carousel .slide-content { padding-bottom: .3rem; }
+}
+
+/* Small viewport height tuning to avoid cutoff */
+@media (max-height: 740px){
+  .hero { min-height: 58vh; }
+  .youtube-player { padding-bottom: 48%; }
+}
+@media (max-height: 640px){
+  .hero { min-height: 52vh; }
+  .youtube-player { padding-bottom: 44%; }
+}
 
 /* Blog instagram grid */
 .insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; align-items: start; }
