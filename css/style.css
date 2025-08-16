@@ -112,6 +112,9 @@ nav li.selected a { font-weight: 800; }
 .card .btn { margin-top:.6rem; }
 .card img { width: 100%; height: auto; border-radius: calc(var(--radius) - 4px); display:block; }
 .card:hover { box-shadow: 0 16px 36px rgba(0,0,0,.12); }
+/* If a card is an anchor, keep normal text styles */
+a.card { color: inherit; text-decoration: none; display: block; }
+a.card:hover { text-decoration: none; }
 
 /* Emphasis banner */
 .banner { background: linear-gradient(90deg, rgba(122,92,250,.14), rgba(46,197,211,.12)); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; text-align: center; }
@@ -166,6 +169,9 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; height: var(--footer-h);
 img { max-width: 100%; height: auto; }
 .muted { color: var(--muted); }
 
+/* Utility: center content between header and bottom bars */
+.full-center { min-height: calc(100vh - var(--header-h) - var(--nav-h) - var(--footer-h) - var(--safe-area-bottom)); display: flex; align-items: center; justify-content: center; }
+
 /* Theme toggle */
 /* Removed dark mode */
 
@@ -190,7 +196,7 @@ img { max-width: 100%; height: auto; }
 .sections-carousel .section-intro { gap: .25rem; margin-bottom: .2rem; }
 .sections-carousel h3.anchor { margin: 0 0 .1rem; }
 .sections-carousel p.muted { margin: .05rem 0 .12rem; }
-.sections-carousel .cards { margin: .1rem 0 0; gap: .5rem; grid-auto-rows: var(--work-card-h); }
+.sections-carousel .cards { margin: .14rem 0 0; gap: .6rem; grid-auto-rows: var(--work-card-h); }
 .sections-carousel .card { padding: .9rem .95rem .9rem .75rem; height: 100%; display: flex; flex-direction: column; }
 @media (max-width: 640px){
   .sections-carousel .card { padding: .85rem .9rem .85rem .7rem; }
@@ -230,7 +236,7 @@ img { max-width: 100%; height: auto; }
 /* Small screens: ensure a clearer vertical gap and reduce card height so both cards fit between header and bottom bars */
 @media (max-width: 640px){
   :root { --work-card-h: clamp(220px, 32vh, 360px); }
-  .sections-carousel .cards { gap: .85rem; }
+  .sections-carousel .cards { gap: .75rem; }
   .sections-carousel .slide-content { padding-bottom: .3rem; }
 }
 
@@ -243,6 +249,10 @@ img { max-width: 100%; height: auto; }
   .hero { min-height: 52vh; }
   .youtube-player { padding-bottom: 44%; }
 }
+
+/* Back button pinned to header, top-left */
+header .back-btn { position: absolute; left: 10px; top: 10px; background: #fff; color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: .4rem .7rem; font-weight: 700; text-decoration: none; box-shadow: var(--shadow); line-height: 1; }
+header .back-btn:hover { background: #f2f2f2; }
 
 /* Blog instagram grid */
 .insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; align-items: start; }
