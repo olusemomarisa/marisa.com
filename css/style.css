@@ -188,7 +188,7 @@ img { max-width: 100%; height: auto; }
 /* Two-section horizontal carousel for work.html */
 .sections-carousel { overflow: hidden; }
 .sections-track { display: flex; width: 200%; transition: transform .5s ease; will-change: transform; }
-.section-slide { flex: 0 0 50%; padding: .35rem 0 .2rem; height: calc(100vh - var(--header-h) - var(--nav-h) - var(--footer-h) - var(--safe-area-bottom)); overflow: hidden; }
+.section-slide { flex: 0 0 50%; padding: .35rem 0 .35rem; height: calc(100vh - var(--header-h) - var(--nav-h) - var(--footer-h) - var(--safe-area-bottom)); overflow: hidden; }
 .section-slide .cards { height: 100%; align-content: start; }
 .section-slide .card { height: auto; }
 
@@ -227,7 +227,7 @@ img { max-width: 100%; height: auto; }
 }
 
 /* Scale-to-fit wrapper for work slides */
-.slide-content { transform-origin: top center; margin: 0 auto; }
+.slide-content { transform-origin: top center; margin: 0 auto; padding-bottom: .25rem; }
 @media (max-height: 680px){
   .sections-carousel .card { padding: .9rem; }
   .sections-carousel .cards { gap: .6rem; }
@@ -257,3 +257,7 @@ header .back-btn:hover { background: #f2f2f2; }
 /* Blog instagram grid */
 .insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; align-items: start; }
 .insta-grid blockquote.instagram-media { width: 100% !important; max-width: none !important; }
+
+/* Arts & Advocacy page card grid tweaks */
+.aa-cards { gap: .7rem; }
+@media (max-width: 640px){ .aa-cards { gap: .8rem; } }
