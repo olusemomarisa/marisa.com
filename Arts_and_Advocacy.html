@@ -12,7 +12,7 @@
     @media (max-width: 700px){ .aa-cards { grid-template-columns: 1fr; } }
   </style>
 </head>
-<body>
+<body class="scrollable">
   <header>
     <div id="logo">
       <h1><a href="index.html">Marisa Olusemo</a></h1>
@@ -87,6 +87,7 @@
     </div>
   </main>
 
+  <section>
   <nav class="container" role="navigation" aria-label="Primary">
     <ul class="clearfix" id="cfix">
       <li class="icon" id="icon"><a href="javascript:void(0);" onclick="myMenu()" aria-label="Toggle menu">&#9776; Menu</a></li>
@@ -100,6 +101,8 @@
       </li>
     </ul>
   </nav>
+  </section>
+
   <footer>
     <div class="footer-inner">
       <div class="social-group left" aria-label="Social links left">
@@ -126,12 +129,14 @@
       const track = document.getElementById('sections-track');
       if(!track) return;
       const buttons = document.querySelectorAll('.section-nav [data-goto]');
-      function goto(i){ track.style.transform = `translateX(${i === 0 ? '0' : '-50%'})`; fitSlides(); }
+  function goto(i){ track.style.transform = `translateX(${i === 0 ? '0' : '-50%'})`; setTimeout(fitSlides, 0); }
       buttons.forEach(btn=>btn.addEventListener('click', ()=>goto(parseInt(btn.dataset.goto,10)||0)));
     })();
   </script>
   <script>
     function fitSlides(){
+      // Skip scale-to-fit when page is scrollable or on small screens
+      if (document.body.classList.contains('scrollable') || window.matchMedia('(max-width: 700px)').matches) return;
       const slides = document.querySelectorAll('.section-slide');
       slides.forEach(slide => {
         const content = slide.querySelector('.slide-content');

@@ -1,5 +1,7 @@
 /* Portfolio theme */
 /* Design tokens */
+* { box-sizing: border-box; }
+
 :root {
   --bg: #F7F7F5;
   --surface: #ffffff;
@@ -35,9 +37,17 @@ body {
   padding-top: 0;
   /* space for fixed footer & bottom nav + device safe area */
   padding-bottom: calc(var(--footer-h) + var(--nav-h) + var(--safe-area-bottom));
-  overflow: hidden; /* no scrolling by default */
+  overflow-x: hidden; /* never horizontal scroll */
+  overflow-y: hidden; /* no vertical scroll by default */
 }
-body.scrollable { overflow: auto; }
+body.scrollable { overflow-y: auto; overflow-x: hidden; }
+
+/* When a page is marked scrollable, allow sections-carousel to expand naturally on all sizes */
+body.scrollable .sections-carousel { overflow-x: hidden; overflow-y: visible; }
+body.scrollable .section-slide { height: auto; overflow: visible; padding-bottom: 1rem; }
+body.scrollable .slide-content { transform: none !important; padding-bottom: calc(var(--nav-h) + var(--footer-h) + var(--safe-area-bottom) + 12px); }
+body.scrollable .sections-carousel .cards { grid-auto-rows: auto; }
+body.scrollable .section-slide .cards { height: auto; align-content: stretch; }
 
 /* Header band (brand strip) */
 header { background: #fff; height: 64px; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 1200; }
@@ -186,8 +196,9 @@ img { max-width: 100%; height: auto; }
 .tiny { font-size: .9rem; color: var(--muted); }
 
 /* Two-section horizontal carousel for work.html */
-.sections-carousel { overflow: hidden; }
-.sections-track { display: flex; width: 200%; transition: transform .5s ease; will-change: transform; }
+.sections-carousel { overflow: hidden; clip-path: inset(0); overscroll-behavior-x: none; }
+.sections-track { display: flex; width: 200%; transition: transform .5s ease; will-change: transform; contain: content; }
+.sections-track { backface-visibility: hidden; transform: translateZ(0); }
 .section-slide { flex: 0 0 50%; padding: .35rem 0 .35rem; height: calc(100vh - var(--header-h) - var(--nav-h) - var(--footer-h) - var(--safe-area-bottom)); overflow: hidden; }
 .section-slide .cards { height: 100%; align-content: start; }
 .section-slide .card { height: auto; }
@@ -197,6 +208,11 @@ img { max-width: 100%; height: auto; }
 .sections-carousel h3.anchor { margin: 0 0 .1rem; }
 .sections-carousel p.muted { margin: .05rem 0 .12rem; }
 .sections-carousel .cards { margin: .14rem 0 0; gap: .6rem; grid-auto-rows: var(--work-card-h); }
+.sections-carousel .aa-cards { gap: 1rem; }
+.sections-carousel .aa-cards { grid-auto-rows: auto; }
+
+/* Ensure extra bottom breathing room above fixed nav/footer when scrollable */
+body.scrollable .site_content_index.sections-carousel { padding-bottom: calc(var(--nav-h) + var(--footer-h) + var(--safe-area-bottom) + 16px); }
 .sections-carousel .card { padding: .9rem .95rem .9rem .75rem; height: 100%; display: flex; flex-direction: column; }
 @media (max-width: 640px){
   .sections-carousel .card { padding: .85rem .9rem .85rem .7rem; }
@@ -231,6 +247,14 @@ img { max-width: 100%; height: auto; }
 @media (max-height: 680px){
   .sections-carousel .card { padding: .9rem; }
   .sections-carousel .cards { gap: .6rem; }
+}
+
+/* Mobile: allow vertical scroll for pages that opt-in */
+@media (max-width: 700px){
+  body.scrollable-mobile { overflow: auto; }
+  body.scrollable-mobile .sections-carousel { overflow: visible; }
+  body.scrollable-mobile .section-slide { height: auto; overflow: visible; padding-bottom: .9rem; }
+  body.scrollable-mobile .slide-content { transform: none !important; }
 }
 
 /* Small screens: ensure a clearer vertical gap and reduce card height so both cards fit between header and bottom bars */
