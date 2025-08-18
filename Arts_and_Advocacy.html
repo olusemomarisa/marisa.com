@@ -129,8 +129,19 @@
       const track = document.getElementById('sections-track');
       if(!track) return;
       const buttons = document.querySelectorAll('.section-nav [data-goto]');
-  function goto(i){ track.style.transform = `translateX(${i === 0 ? '0' : '-50%'})`; setTimeout(fitSlides, 0); }
+      let current = 0;
+      function goto(i){
+        current = i === 1 ? 1 : 0;
+        const container = track.parentElement; // .sections-carousel
+        const containerWidth = container ? container.clientWidth : 0;
+        const offset = Math.round(current * containerWidth);
+        track.style.transform = `translate3d(${-offset}px,0,0)`;
+        setTimeout(fitSlides, 0);
+      }
       buttons.forEach(btn=>btn.addEventListener('click', ()=>goto(parseInt(btn.dataset.goto,10)||0)));
+      window.addEventListener('resize', ()=>goto(current));
+      window.addEventListener('orientationchange', ()=>goto(current));
+      document.addEventListener('DOMContentLoaded', ()=>goto(current));
     })();
   </script>
   <script>
